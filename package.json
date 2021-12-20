@@ -1,0 +1,27 @@
+{
+  "name": "nodelearning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhatquang-sl/NodeLearning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nhatquang-sl/NodeLearning/issues"
+  },
+  "homepage": "https://github.com/nhatquang-sl/NodeLearning#readme",
+  "dependencies": {
+    "date-fns": "^2.27.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
