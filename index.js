@@ -49,7 +49,7 @@ const server = http.createServer((req, res) => {
     filePath =
       req.url === '/'
         ? path.join(__dirname, 'src', 'views', 'index.html')
-        : (contentType === req.url.slice(-1)) === '/'
+        : req.url.slice(-1) === '/'
         ? path.join(__dirname, 'src', 'views', req.url, 'index.html')
         : path.join(__dirname, 'src', 'views', req.url);
   }
