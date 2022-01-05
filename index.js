@@ -11,12 +11,13 @@ class MyEmitter extends EventEmitter {}
 
 // initialize object
 const myEmitter = new MyEmitter();
+myEmitter.on('log', (msg, fileName) => logEvents(msg, fileName));
 
 const PORT = process.env.PORT || 3500;
 
 const server = http.createServer((req, res) => {
   console.log(req.url, req.method);
-
+  myEmitter.emit('log', `${req.url}\t${req.method}`, 'reqLog.txt');
   const extension = path.extname(req.url);
 
   let contentType;
@@ -82,11 +83,16 @@ const server = http.createServer((req, res) => {
 
 const serveFile = async (filePath, contentType, response) => {
   try {
-    const data = await fsPromises.readFile(filePath, 'utf8');
-    response.writeHead(200, { 'Content-Type': contentType });
+    const rawData = await fsPromises.readFile(
+      filePath,
+      contentType.includes('image') ? '' : 'utf8'
+    );
+    const data = contentType === 'application/json' ? JSON.stringify(JSON.parse(rawData)) : rawData;
+    response.writeHead(filePath.includes('404.html') ? 404 : 200, { 'Content-Type': contentType });
     response.end(data);
   } catch (err) {
-    console.log(err);
+    console.log(JSON.stringify(err));
+    myEmitter.emit('log', `${err.name}\t${err.message}`, 'errLog.txt');
     response.statusCode = 500;
     response.end();
   }
