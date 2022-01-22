@@ -32,19 +32,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // serve static files
-app.use(express.static(path.join(__dirname, 'src', 'public')));
+app.use('/', express.static(path.join(__dirname, 'src', 'public')));
+app.use('/subdir', express.static(path.join(__dirname, 'src', 'public')));
 
-app.get('^/$|/index(.html)?', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'views', 'index.html'));
-});
-
-app.get('/new-page(.html)?', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'views', 'new-page.html'));
-});
-
-app.get('/old-page(.html)?', (req, res) => {
-  res.redirect(301, '/new-page.html');
-});
+app.use('/', require('./src/routes/root'));
+app.use('/subdir', require('./src/routes/subdir'));
+app.use('/employees', require('./src/routes/api/employees'));
 
 // app.all accept all HTTP verbs
 app.all('*', (req, res) => {
