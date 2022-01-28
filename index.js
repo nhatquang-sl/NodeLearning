@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
+const corsOptions = require('./src/config/corsOptions');
 const { reqLogger } = require('./src/middleware/logEvents');
 const errorHandler = require('./src/middleware/errorHandler');
 const PORT = process.env.PORT || 3500;
@@ -10,17 +11,6 @@ const PORT = process.env.PORT || 3500;
 app.use(reqLogger);
 
 // Cross Origin Resource Sharing
-const whitelist = ['http://127.0.0.1:3500', 'http://localhost:3500'];
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Now allowed by CORS'));
-    }
-  },
-  optionsSuccessStatus: 200,
-};
 app.use(cors(corsOptions));
 
 // built-in middleware to handle urlencoded data
@@ -33,10 +23,8 @@ app.use(express.json());
 
 // serve static files
 app.use('/', express.static(path.join(__dirname, 'src', 'public')));
-app.use('/subdir', express.static(path.join(__dirname, 'src', 'public')));
 
 app.use('/', require('./src/routes/root'));
-app.use('/subdir', require('./src/routes/subdir'));
 app.use('/employees', require('./src/routes/api/employees'));
 
 // app.all accept all HTTP verbs
