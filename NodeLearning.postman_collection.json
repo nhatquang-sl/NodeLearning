@@ -6,127 +6,193 @@
 	},
 	"item": [
 		{
-			"name": "GET Employees",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3500/employees",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3500",
-					"path": [
-						"employees"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Employee",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Employees",
+			"item": [
+				{
+					"name": "GET Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"employees"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3500/employees",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3500",
-					"path": [
-						"employees"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "PUT Employee",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"David\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "POST Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"employees"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3500/employees",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3500",
-					"path": [
-						"employees"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE Employee",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "PUT Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"David\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"employees"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3500/employees",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3500",
-					"path": [
-						"employees"
-					]
+				{
+					"name": "DELETE Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET an Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "GET an Employee",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3500/employees/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3500",
-					"path": [
-						"employees",
-						"1"
-					]
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"walt1\",\r\n    \"pwd\": \"Aa$12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"walt1\",\r\n    \"pwd\": \"Aa$12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

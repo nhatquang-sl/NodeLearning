@@ -25,6 +25,8 @@ app.use(express.json());
 app.use('/', express.static(path.join(__dirname, 'src', 'public')));
 
 app.use('/', require('./src/routes/root'));
+app.use('/register', require('./src/routes/register'));
+app.use('/auth', require('./src/routes/auth'));
 app.use('/employees', require('./src/routes/api/employees'));
 
 // app.all accept all HTTP verbs
