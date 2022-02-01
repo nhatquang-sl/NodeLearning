@@ -25,5 +25,6 @@ const sendLogin = async () => {
 
 (async () => {
   console.log('Init Async');
-  await sendLogin();
+  const token = await sendLogin();
+  console.log(token);
 })();

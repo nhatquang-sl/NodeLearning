@@ -30,5 +30,10 @@ https://github.com/gitdagray/node_js_resources
 - Start front end: `npm run auth-fe`
 ### Verify on the Network tab
 
+## Cookie’s SameSite
+```
+Specify SameSite=None and Secure if the cookie is intended to be set in cross-site contexts. Note that only cookies sent over HTTPS may use the Secure attribute.
+```
+
 # Scripts
 - Generate base 64: require('crypto').randomBytes(64).toString('hex')
