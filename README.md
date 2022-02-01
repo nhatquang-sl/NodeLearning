@@ -24,5 +24,11 @@ https://github.com/gitdagray/node_js_resources
   - XSS:Cross-Site Scripting
   - CSRF: CS Request Forgery
 
+## Access-Control-Allow-Origin
+### Run demo
+- Start node server: `npm run dev`
+- Start front end: `npm run auth-fe`
+### Verify on the Network tab
 
-require('crypto').randomBytes(64).toString('hex')
+# Scripts
+- Generate base 64: require('crypto').randomBytes(64).toString('hex')

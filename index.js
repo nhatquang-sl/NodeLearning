@@ -7,10 +7,15 @@ const { reqLogger } = require('./src/middleware/logEvents');
 const errorHandler = require('./src/middleware/errorHandler');
 const verifyJWT = require('./src/middleware/verifyJWT');
 const cookieParser = require('cookie-parser');
+const credentials = require('./src/middleware/credentials');
 const PORT = process.env.PORT || 3500;
 
 // custom middleware logger
 app.use(reqLogger);
+
+// Handle options credentials check - before CORS!
+// and fetch cookies credentials requirement
+app.use(credentials);
 
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
