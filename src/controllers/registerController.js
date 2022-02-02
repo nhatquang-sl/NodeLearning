@@ -4,7 +4,7 @@ const usersDB = {
     this.users = data;
   },
 };
-
+const ROLES = require('../config/roles');
 const fsPromises = require('fs').promises;
 const path = require('path');
 const bcrypt = require('bcrypt');
@@ -23,6 +23,7 @@ const handleNewUser = async (req, res) => {
     const newUser = {
       username: user,
       password: hashedPwd,
+      roles: [ROLES.USER],
     };
     usersDB.setUsers([...usersDB.users, newUser]);
     await fsPromises.writeFile(
