@@ -35,5 +35,10 @@ https://github.com/gitdagray/node_js_resources
 Specify SameSite=None and Secure if the cookie is intended to be set in cross-site contexts. Note that only cookies sent over HTTPS may use the Secure attribute.
 ```
 
+# Authentication
+- is the process of verifying who someone is.
+# Authorization
+- is the process of verifying what resources a user has access to.
+
 # Scripts
 - Generate base 64: require('crypto').randomBytes(64).toString('hex')
