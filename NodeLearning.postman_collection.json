@@ -16,7 +16,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQxIiwiaWF0IjoxNjQzNTY4MDYxLCJleHAiOjE2NDM1NjgwOTF9.GVf-xwaUfUoziYIPB_mdNkWKypIt710YIJS9JJr-Sds",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQiLCJyb2xlcyI6WyJVc2VyIiwiQWRtaW4iLCJFZGl0b3IiXSwiaWF0IjoxNjQ0NDI4NzI5LCJleHAiOjE2NDQ0Mjg3NTl9.YDrAJvcETRg8a71S0apmSDlSU5b-TaymK9QbTtcen_s",
 									"type": "string"
 								}
 							]
@@ -40,6 +40,16 @@
 				{
 					"name": "POST Employee",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQiLCJyb2xlcyI6WyJVc2VyIiwiQWRtaW4iLCJFZGl0b3IiXSwiaWF0IjoxNjQ0NDI4Njg5LCJleHAiOjE2NDQ0Mjg3MTl9._qPFaM7C4XIUsdV1Ie535gZuuyGFLH4MF6aQgE69ZJ0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -68,11 +78,21 @@
 				{
 					"name": "PUT Employee",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQiLCJyb2xlcyI6WyJVc2VyIiwiQWRtaW4iLCJFZGl0b3IiXSwiaWF0IjoxNjQ0NDI4Nzg5LCJleHAiOjE2NDQ0Mjg4MTl9.LOFcMTYMKAL1xwSXCcMACFE6KyL-1Cuad7dAJW1mGQM",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"David\"\r\n}",
+							"raw": "{\r\n    \"id\": \"6203fd983f01a128d35bf6ee\",\r\n    \"firstName\": \"David\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -96,11 +116,21 @@
 				{
 					"name": "DELETE Employee",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQiLCJyb2xlcyI6WyJVc2VyIiwiQWRtaW4iLCJFZGl0b3IiXSwiaWF0IjoxNjQ0NDI4ODg0LCJleHAiOjE2NDQ0Mjg5MTR9.Y89eKrw7pk7_bzkr4IU7jb_kMC1Dyhh3PuojUVJzm9w",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2\r\n}",
+							"raw": "{\r\n    \"id\": \"6203fd983f01a128d35bf6ee\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -124,10 +154,20 @@
 				{
 					"name": "GET an Employee",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQiLCJyb2xlcyI6WyJVc2VyIiwiQWRtaW4iLCJFZGl0b3IiXSwiaWF0IjoxNjQ0NDI4ODQ2LCJleHAiOjE2NDQ0Mjg4NzZ9.EsIDPePMoYT84QFUsKCmlg3UMTeZsbrFbJmcxoVAEes",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3500/employees/1",
+							"raw": "http://localhost:3500/employees/6203fd983f01a128d35bf6ee",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -135,7 +175,7 @@
 							"port": "3500",
 							"path": [
 								"employees",
-								"1"
+								"6203fd983f01a128d35bf6ee"
 							]
 						}
 					},
@@ -153,7 +193,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user\": \"walt1\",\r\n    \"pwd\": \"Aa$12345\"\r\n}",
+							"raw": "{\r\n    \"user\": \"walt01\",\r\n    \"pwd\": \"Aa$12345\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -181,7 +221,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user\": \"walt1\",\r\n    \"pwd\": \"Aa$12345\"\r\n}",
+							"raw": "{\r\n    \"user\": \"walt\",\r\n    \"pwd\": \"Aa$12345\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
