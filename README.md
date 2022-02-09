@@ -40,5 +40,17 @@ Specify SameSite=None and Secure if the cookie is intended to be set in cross-si
 # Authorization
 - is the process of verifying what resources a user has access to.
 
+# MongoDB
+- A record in MongoDB is a document, 
+  - Which is a data structure composed of field and value pairs. 
+  - MongoDB documents are similar to JSON objects. 
+  - The values of fields may include other documents, arrays, and arrays of documents.
+- MongoDB stores documents in collections.
+## Advantages:
+- Performance
+- Flexibility: adding new field
+- Scalability:
+- Usability
+
 # Scripts
 - Generate base 64: require('crypto').randomBytes(64).toString('hex')
