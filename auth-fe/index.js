@@ -1,14 +1,14 @@
 console.log('Authentication Front End');
 
 const sendLogin = async () => {
-  const user = 'walt1';
+  const user = 'walt';
   const pwd = 'Aa$12345';
   try {
     const response = await fetch('http://localhost:3500/auth', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
-      body: JSON.stringify({ user, pwd }),
+      body: JSON.stringify({ user, pwd })
     });
 
     if (!response.ok) {

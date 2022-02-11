@@ -1,6 +1,7 @@
-const User = require('../model/User');
+import { Request, Response } from 'express';
+import User from '../model/User';
 
-const handleLogout = async (req, res) => {
+const handleLogout = async (req: Request, res: Response) => {
   // On client, also delete the accessToken
 
   const cookies = req.cookies;
@@ -19,8 +20,9 @@ const handleLogout = async (req, res) => {
   const result = await foundUser.save();
   console.log(result);
 
-  res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true }); // secure: true - only serves on https
+  // secure: true - only serves on https
+  res.clearCookie('jwt', { httpOnly: true, sameSite: 'none', secure: true });
   res.sendStatus(204);
 };
 
-module.exports = { handleLogout };
+export default { handleLogout };
