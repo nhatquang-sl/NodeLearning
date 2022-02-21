@@ -4,11 +4,12 @@ import path from 'path';
 import mongoose from 'mongoose';
 import connectDB from './config/dbConn';
 import rootRoute from './routes/root';
-import registerRoute from './routes/register';
-import authRoute from './routes/auth';
-import refreshRoute from './routes/refresh';
-import logoutRoute from './routes/logout';
+// import registerRoute from './routes/register';
+// import authRoute from './routes/auth';
+// import refreshRoute from './routes/refresh';
+// import logoutRoute from './routes/logout';
 import employeesRoute from './routes/api/employees';
+import userRoute from './controllers/users/routes';
 
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -21,8 +22,6 @@ import errorHandler from './middleware/errorHandler';
 
 const app = express();
 const PORT = process.env.PORT || 3500;
-
-// app.use(cors(corsOptions));
 
 // Connect to MongoDB
 connectDB();
@@ -51,10 +50,11 @@ app.use(cookieParser());
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.use('/', rootRoute);
-app.use('/register', registerRoute);
-app.use('/auth', authRoute);
-app.use('/refresh', refreshRoute);
-app.use('/logout', logoutRoute);
+app.use('/user', userRoute);
+// app.use('/register', registerRoute);
+// app.use('/auth', authRoute);
+// app.use('/refresh', refreshRoute);
+// app.use('/logout', logoutRoute);
 
 app.use(verifyJWT);
 app.use('/employees', employeesRoute);
